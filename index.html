@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Father's Herbal — Products & Contact</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    :root{
+      --bg: #f8faf9;
+      --brand: #2e7d32;
+      --brand-2: #66bb6a;
+      --brand-light: #e8f5e8;
+      --text: #1a1a1a;
+      --text-light: #4a5568;
+      --muted: #718096;
+      --border: rgba(33,48,40,.12);
+      --shadow: 0 4px 20px rgba(46, 125, 50, 0.08);
+      --shadow-lg: 0 10px 40px rgba(46, 125, 50, 0.15);
+      --gradient-brand: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+      --gradient-bg: linear-gradient(135deg, #ffffff 0%, #f8faf9 100%);
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body{
+      margin:0; 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      background:var(--bg); 
+      color:var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container{
+      width:min(1200px, 92%); 
+      margin:auto;
+      padding: 0 1rem;
+    }
+
+    /* Enhanced Header */
+    .topbar{
+      background: var(--gradient-brand); 
+      color: #fff;
+      font-size:.88rem;
+      font-weight: 500;
+    }
+    .topbar .inner{
+      display:flex; 
+      justify-content:space-between; 
+      align-items: center;
+      padding:.8rem 0;
+    }
+    .topbar .inner > div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    header.site-header{
+      position:sticky; 
+      top:0; 
+      z-index:60; 
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+    
+    .nav{
+      display:flex; 
+      justify-content:space-between; 
+      align-items:center; 
+      padding:1.2rem 0;
+    }
+    
+    .logo{
+      display:flex; 
+      gap:.8rem; 
+      align-items:center;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.25rem;
+      transition: transform 0.2s ease;
+    }
+    .logo:hover {
+      transform: translateY(-1px);
+    }
+    
+    .mark{
+      width:48px; 
+      height:48px; 
+      border-radius:12px; 
+      display:grid; 
+      place-items:center; 
+      background: var(--gradient-brand);
+      color:#fff;
+      font-size: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
+    }
+    .mark:hover {
+      transform: scale(1.05);
+    }
+    
+    nav.primary ul{
+      display:flex; 
+      gap:2rem; 
+      list-style:none; 
+      padding:0; 
+      margin:0;
+    }
+    nav.primary a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    nav.primary a:hover {
+      color: var(--brand);
+      background: var(--brand-light);
+    }
+
+    /* Enhanced HERO */
+    .hero{
+      padding:4rem 0; 
+      background: var(--gradient-bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2366bb6a' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      z-index: 1;
+    }
+    .hero .inner{
+      display:flex; 
+      gap:3rem; 
+      align-items:center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero .left, .hero .right{
+      flex:1;
+    }
+    .hero h1{
+      font-size:3.2rem; 
+      margin-bottom:1rem; 
+      color:var(--brand);
+      font-weight: 700;
+      line-height: 1.2;
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero .tagline{
+      font-style:italic; 
+      color:var(--muted); 
+      margin-bottom:1.5rem;
+      font-size: 1.1rem;
+    }
+    .hero p{
+      margin:0 auto 1.5rem; 
+      line-height:1.8; 
+      text-align:justify;
+      color: var(--text-light);
+      font-size: 1.05rem;
+    }
+    .hero img{
+      max-width:100%; 
+      height:auto; 
+      display:block; 
+      margin:auto;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.3s ease;
+    }
+    .hero img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Enhanced Floating Buttons */
+    .translate-all{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      z-index:100;
+      background: var(--gradient-brand);
+      color:#fff;
+      border:none;
+      padding:.9rem 1.5rem;
+      border-radius:50px;
+      cursor:pointer;
+      font-size:.95rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    .translate-all:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(46, 125, 50, 0.25);
+    }
+    .translate-all:active {
+      transform: translateY(0);
+    }
+
+    /* Enhanced Products section */
+    #products{
+      padding:5rem 0; 
+      background:#fff;
+      position: relative;
+    }
+    #products h2{
+      text-align:center; 
+      color:var(--brand); 
+      margin-bottom:3rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    .product-grid{
+      display:grid; 
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); 
+      gap:2rem;
+      margin-bottom: 3rem;
+    }
+    .product-card{
+      background:#fff; 
+      border-radius:20px; 
+      padding:1.8rem; 
+      box-shadow: var(--shadow);
+      display:none; 
+      flex-direction:column; 
+      align-items:center; 
+      text-align:center;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      height: fit-content;
+      min-height: 400px;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-brand);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover::before {
+      transform: scaleX(1);
+    }
+    .product-card:hover{
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    .product-card img{
+      width:100%; 
+      height:180px;
+      object-fit: cover;
+      border-radius:12px; 
+      margin-bottom:1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+    .product-card h3{
+      margin:0 0 1rem; 
+      color:var(--brand);
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .product-card p{
+      margin:0 0 1.5rem; 
+      line-height:1.7;
+      color: var(--text-light);
+      flex-grow: 1;
+    }
+    .product-card button.order-btn{
+      padding:.8rem 2rem; 
+      background: var(--gradient-brand);
+      color:#fff; 
+      border:none; 
+      border-radius:50px; 
+      cursor:pointer; 
+      font-size:1rem;
+      font-weight: 500;
+      margin-top:auto;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+    .product-card button.order-btn:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .view-more{
+      display:block; 
+      margin:0 auto; 
+      padding:1rem 2.5rem; 
+      font-size:1.1rem;
+      font-weight: 600;
+      background: var(--gradient-brand);
+      color:#fff; 
+      border:none; 
+      border-radius:50px; 
+      cursor:pointer; 
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s ease;
+    }
+    .view-more:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(46, 125, 50, 0.25);
+    }
+
+    /* Enhanced Contact form */
+    #contact{
+      padding:5rem 0; 
+      background: var(--gradient-bg);
+      position: relative;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2366bb6a' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    #contact h2{
+      text-align:center; 
+      color:var(--brand); 
+      margin-bottom:3rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+    }
+    form{
+      max-width:650px; 
+      margin:auto; 
+      display:flex; 
+      flex-direction:column; 
+      gap:1.5rem;
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      z-index: 2;
+    }
+    form label{
+      font-weight:600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    form input, form select, form textarea{
+      padding:1rem; 
+      border:2px solid var(--border); 
+      border-radius:12px; 
+      font-size:1rem; 
+      width:100%;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    form input:focus, form select:focus, form textarea:focus {
+      outline: none;
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+    }
+    form button{
+      padding:1rem 2rem; 
+      background: var(--gradient-brand);
+      color:#fff; 
+      border:none; 
+      border-radius:12px; 
+      cursor:pointer; 
+      font-size:1.1rem;
+      font-weight: 600;
+      margin-top:1rem;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+    form button:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Enhanced Footer */
+    footer{
+      padding:3rem 0; 
+      border-top:1px solid var(--border); 
+      margin-top:0;
+      text-align:center; 
+      color:var(--muted);
+      background: #fff;
+      font-weight: 500;
+    }
+
+    /* Responsive Design */
+    @media(max-width:900px){
+      .hero .inner{
+        flex-direction:column;
+        gap: 2rem;
+      }
+      .hero .left,.hero .right{
+        width:100%;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .product-grid{
+        grid-template-columns: 1fr;
+      }
+      nav.primary ul {
+        gap: 1rem;
+      }
+      .container {
+        padding: 0 0.5rem;
+      }
+    }
+    
+    @media(max-width:600px){
+      .hero {
+        padding: 2rem 0;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      #products, #contact {
+        padding: 3rem 0;
+      }
+      #products h2, #contact h2 {
+        font-size: 2rem;
+      }
+      form {
+        padding: 1.5rem;
+        margin: 0 1rem;
+      }
+      .topbar .inner {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+      nav.primary ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .translate-all {
+        bottom: 10px;
+        right: 10px;
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner">
+      <div>📞 +237 653 078 433</div>
+      <div>💬 WhatsApp support</div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="#"><div class="mark"><img src="images/dlogo.png" width="60px" height="50px"></div><strong> &nbsp; Dynace Global Cameroon</strong></a>
+      <nav class="primary" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#home">Home/Accueil</a></li>
+          <li><a href="#products">Products/Produits</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero container" id="hero">
+      <div class="inner">
+        <div class="left">
+          <h1>Dynace Global Cameroon</h1>
+          <!-- <p class="tagline">Traditional Herbal Medicine for Health &amp; Wellness</p> -->
+          <div id="dummyText" aria-live="polite">&nbsp;&nbsp;</div>
+        </div>
+        <div class="right">
+          <img src="images/dlogo.png" alt="Herbal drug product" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="container">
+      <h2>Premium Products/Produits Premium</h2>
+      <div class="product-grid" id="productGrid"></div>
+      <button class="view-more" id="viewMoreBtn">View More/Voir Plus</button>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+      <h2>Place Your Order/Commandez Un Produit</h2>
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+        <label for="age">Age</label>
+        <input type="number" id="age" required>
+        <label for="place">Delivery Adress</label>
+        <input type="text" id="place" required>
+        <label for="time">Delivery Time/Date</label>
+        <input type="datetime-local" id="time" required>
+        <label for="sex">Sex</label>
+        <select id="sex" required>
+          <option value="">Select Sex</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required>
+        <label for="productSelect">Product</label>
+        <select id="productSelect" required>
+          <option value="">Select Product</option>
+        </select>
+        <label for="message">Message</label>
+        <textarea id="message" rows="4"></textarea>
+        <button type="submit">Send on WhatsApp/ Envoyer sur WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> Dynace Global Cameroon</small>
+  </footer>
+
+  <!-- Floating hero translate -->
+  <button id="translateAllBtn" class="translate-all">Translate Hero to French/Traduire Hero en Francais</button>
+
+  <script>
+    // Hero text
+    const dummyContainer = document.getElementById('dummyText');
+    const heroLines = 1;
+    const heroParagraphs = [];
+    for(let i=1;i<=heroLines;i++){
+      const p = document.createElement('p');
+      const en = `Dynace Global Cameroon is a partner to Dynace Global Malaysia, a company that produces health products top of
+      which Dynace Rocenta a stermcell product at the center  of moderne cellular therapy Dynace Global Malaysia, the producer, with Dynace Global Cameroon, the sole distributor, is a health company that understands and makes use of a modern approach in neutralizing all kinds of diseases in the body called cellular therapy. This is simply the process of enabling the body through the input of plant stem cells that will give the body the capacity to eliminate any kind of disease with particular emphasis on nutritional and metabolic-based disease.`;
+      const fr = `Dynace Global Cameroon est un partenaire de  Dynace Global Malaysia, une entreprise qui fabrique les produits de santé, parmi lesquels Dynace Rocenta, un produit à base de cellules souches végétales au centre de la thérapie cellulaire moderne.Dynace Global Malaysia, le producteur, avec Dynace Global Cameroun, le distributeur exclusif, est une entreprise de santé qui comprend et utilise une approche moderne pour neutraliser toutes sortes de maladies dans le corps appelée thérapie cellulaire. Il s'agit simplement d'un processus permettant au corps, grâce à l'apport de cellules souches végétales, d'acquérir la capacité d'éliminer tout type de maladie, en mettant particulièrement l'accent sur les maladies liées à la nutrition et au métabolisme.
+.`;
+      p.dataset.en = en;
+      p.dataset.fr = fr;
+      p.textContent = en;
+      dummyContainer.appendChild(p);
+      heroParagraphs.push(p);
+    }
+
+    const heroBtn = document.getElementById('translateAllBtn');
+    let heroLang = 'en';
+    heroBtn.addEventListener('click', ()=>{
+      if(heroLang==='en'){
+        heroParagraphs.forEach(p=>{p.textContent = p.dataset.fr});
+        heroLang = 'fr';
+        heroBtn.textContent = 'Translate Hero to English';
+      } else {
+        heroParagraphs.forEach(p=>{p.textContent = p.dataset.en});
+        heroLang = 'en';
+        heroBtn.textContent = 'Translate Hero to French';
+      }
+    });
+
+    // Product data with real names
+    const productData = [
+      { name: "Rocenta", en:"Dynace Rocenta is a leading biotherapy product from Dynace Global. It is a stermcell product that helps regenerate damaged cells and tissues,enhances the body's natural defense mechanisms,Improves energy and vitality,Supports joint and bone health and enhances cellular function.",
+       fr:"Dynace Rocenta est un produit de biothérapie de pointe de Dynace Global. C'est un produit à base de cellules souches qui aide à régénérer les cellules et tissus endommagés, renforce les mécanismes de défense naturels du corps, améliore l'énergie et la vitalité, soutient la santé des articulations et des os, et améliore le fonctionnement cellulaire." },
+
+       { name: "Urbanisme", en:"Formulated for a double action in your body system, burns body fats by day and detoxifies system by night, Favours weight loss in overweight patient, eliminates chronic constipation and excess dirt in the belly, eliminates hemorroids and anal cancer",
+       fr:"Formulé pour un double effet sur votre organisme, brûle les graisses pendant la journée et détoxifie le système la nuit, favorise la perte de poids chez les patients en surpoids, élimine la constipation chronique et l'excès de déchets dans l'abdomen, élimine les hémorroïdes et le cancer anal" },
+
+
+      { name: "Lift Max", en:"Purposely designed to careter for female health problems.-Regulates irregular and painful menstraul cycles, regulates hormonal balance and mental clarity, eliminates vaginal discomfort, ameliorates female libido,uplifts fallen breasts", 
+      fr:"Conçu spécialement pour répondre aux problèmes de santé féminine.-Régule les cycles menstruels irréguliers et douloureux, régule l'équilibre hormonal et la clarté mentale, élimine les inconforts vaginaux, améliore la libido féminine, redresse les seins tombants" },
+
+
+      { name: "Ace Guard", en:"A biotherapy product designed and built to defend, recover and keep your immune system intact on a daily basis, reduces your sugar levels, slows down the aging process, is a body antioxidant remedy", 
+      fr:"Un produit biothérapie conçue et élaborée pour défendre, récupérer et maintenir votre système immunitaire intact au quotidien, réduit votre taux de sucre, ralentit le processus de vieillissement, et constitue un remède antioxydant pour le corps" },
+
+
+      { name: "Tripple root", en:"A coffee blend with a tripple stermcell formulation, it boosts energy and enhances focus, reduces stress and enhance mental clarity, eliminates quick ejaculation and sexual weakness", 
+      fr:"Un mélange de café avec une formulation triple de cellules souches, il stimule l'énergie et améliore la concentration, réduit le stress et favorise la clarté mentale, élimine l'éjaculation précoce et la faiblesse sexuelle" },
+
+
+      { name: "Ace Brew", en:"Coffee without Glucose blended with NMN and Gymnema sylvestre to keep you affload and functional throughout the day. Also eliminates brain fatigue", 
+      fr:"Café sans glucose mélangé avec NMN et Gymnema sylvestre pour vous maintenir énergique et fonctionnel toute la journée. Élimine également la fatigue cérébrale" },
+
+
+      
+      { name: "Collagen", en:"A bio therapy product to enhance skin glow, deep sleep, and full body renewal, it is an excellent beauty suppliment which supports the health of the skin, reinforces hair growth and ameliorates genral skin vatality, formulated with scientifically proven ingredients which favors the internal and external wellbeing of the body",
+       fr:"Un produit biothérapie pour améliorer l'éclat de la peau, favoriser un sommeil profond et renouveler tout le corps, il est un complement beaute qui soutien la sante de la peau, renforce les cheveux et ameliore la vatalite general, formule avec des ingredients scientifiquement prouves. Pour favorise le bien etre interieur et exterieur pour une beaute durable dans la peau" },
+
+      
+    ];
+
+    const productImages = [
+      'images/rocenta.png',
+      'images/urbanisme.png',
+      'images/lift.png',
+      'images/guard.png',
+      'images/root.jpg',
+      'images/brew.png',
+      'images/collagen.jpg'
+    ];
+
+    const productGrid = document.getElementById('productGrid');
+    const productCards = [];
+    const productSelect = document.getElementById('productSelect');
+
+    productData.forEach((prod, i)=>{
+      // Product card
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.dataset.en = prod.en;
+      card.dataset.fr = prod.fr;
+
+      const img = document.createElement('img');
+      img.src = productImages[i];
+      img.alt = prod.name;
+      card.appendChild(img);
+
+      const title = document.createElement('h3');
+      title.textContent = prod.name;
+      card.appendChild(title);
+
+      const p = document.createElement('p');
+      p.textContent = prod.en;
+      card.appendChild(p);
+
+      const orderBtn = document.createElement('button');
+      orderBtn.className = 'order-btn';
+      orderBtn.textContent = 'Order Now/Commandez';
+      orderBtn.addEventListener('click', ()=>{
+        document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+        productSelect.value = prod.name;
+      });
+      card.appendChild(orderBtn);
+
+      productGrid.appendChild(card);
+      productCards.push(card);
+
+      // Populate dropdown
+      const option = document.createElement('option');
+      option.value = prod.name;
+      option.textContent = prod.name;
+      productSelect.appendChild(option);
+    });
+
+    // Show first 3 cards
+    let visibleCount = 3;
+    productCards.forEach((card,i)=>{if(i<visibleCount) card.style.display='flex'});
+
+    // View more button
+    const viewMoreBtn = document.getElementById('viewMoreBtn');
+    viewMoreBtn.addEventListener('click', ()=>{
+      productCards.forEach(card=>{card.style.display='flex'});
+      viewMoreBtn.style.display='none';
+    });
+
+    // Global product translate button
+    const translateProductsBtn = document.createElement('button');
+    translateProductsBtn.className = 'translate-all';
+    translateProductsBtn.style.bottom = '80px';
+    translateProductsBtn.textContent = 'Translate Products to French/Traduire prduits en francais';
+    document.body.appendChild(translateProductsBtn);
+
+    let productLang = 'en';
+    translateProductsBtn.addEventListener('click', ()=>{
+      if(productLang==='en'){
+        productCards.forEach(card=>{card.querySelector('p').textContent = card.dataset.fr});
+        productLang='fr';
+        translateProductsBtn.textContent='Translate Products to English/Traduire produit en Anglais';
+      } else {
+        productCards.forEach(card=>{card.querySelector('p').textContent = card.dataset.en});
+        productLang='en';
+        translateProductsBtn.textContent='Translate Products to French/Traduire prduits en francais';
+      }
+    });
+
+    // Contact form submit -> WhatsApp
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const sex = document.getElementById('sex').value;
+      const phone = document.getElementById('phone').value;
+      const product = document.getElementById('productSelect').value;
+      const message = document.getElementById('message').value;
+
+      const whatsappMsg = `
+Name: ${name}
+Age: ${age}
+Sex: ${sex}
+Phone: ${phone}
+Product: ${product}
+Message: ${message}
+Delivery Adress: ${place}
+Delivery Time/Date: ${time}
+      `;
+
+      const whatsappURL = `https://wa.me/237653078433?text=${encodeURIComponent(whatsappMsg)}`;
+      window.open(whatsappURL, '_blank');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
